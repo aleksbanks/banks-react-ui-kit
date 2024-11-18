@@ -3,9 +3,18 @@
 /.pnp
 .pnp.js
 
-# misc
+# idea
+/.idea
 .DS_Store
+
+# production
+lib
+/build
 
 yarn-debug.log*
 yarn-error.log*
-/.idea
+.npmignore
+storybook-static
+tsconfig.tsbuildinfo
+output.log
+/.cache/

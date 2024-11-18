@@ -1,0 +1,52 @@
+.spinner {
+	/*display: flex;*/
+	color: inherit;
+
+	/*svg {*/
+	animation: 1s linear 0s normal none infinite running loader;
+	-webkit-animation: 1s linear 0s normal none infinite running loader;
+	/*}*/
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/** sizes */
+.small {
+	/*svg {*/
+	width: 16px;
+	height: 16px;
+	/*}*/
+}
+.medium {
+	/*svg {*/
+	width: 24px;
+	height: 24px;
+	/*}*/
+}
+.large {
+	/*svg {*/
+	width: 32px;
+	height: 32px;
+	/*}*/
+}
+.xlarge {
+	/*svg {*/
+	width: 48px;
+	height: 48px;
+	/*}*/
+}

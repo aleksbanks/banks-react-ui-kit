@@ -1,0 +1,85 @@
+.sidebar-header button[title='Shortcuts'],
+.sidebar-header button[title='Shortcuts']:focus::before {
+	box-shadow: none;
+	border-radius: 4px;
+	color: #323e48;
+}
+
+.sidebar-header button[title='Shortcuts']:hover {
+	color: #323e48;
+}
+
+.sidebar-header button[title='Shortcuts']:active {
+	color: #323e48;
+}
+
+.sidebar-header button[title='Shortcuts']:focus::before {
+	border-color: #b7e4c7;
+}
+
+.search-result-recentlyOpened {
+	letter-spacing: normal !important;
+	text-transform: none !important;
+	font-size: 16px !important;
+	color: #323e48 !important;
+}
+
+.search-field input {
+	border-radius: 4px;
+}
+
+.search-field input:hover {
+	border-color: #6a8398;
+}
+
+.search-field input:focus {
+	border-color: #b7e4c7;
+}
+
+.sidebar-subheading [data-action='collapse-root'] {
+	letter-spacing: normal;
+	text-transform: none;
+	font-size: 14px;
+	align-items: center !important;
+	color: #323e48;
+}
+
+.sidebar-item {
+	display: flex;
+	align-items: center !important;
+}
+
+.sidebar-item[data-selected='true'] {
+	background-color: #d8f3dc !important;
+	color: #323e48 !important;
+}
+
+.search-result-item svg,
+.sidebar-item > svg {
+	width: 16px;
+	height: 16px;
+	margin-top: 0 !important;
+	padding: 0 !important;
+	color: #74c69d !important;
+}
+
+.search-result-back > span,
+.search-result-clearHistory > span {
+	color: #323e48 !important;
+}
+
+.sidebar-item > svg[color='primary'],
+.sidebar-item > svg[color='secondary'],
+.sidebar-item[data-selected='true'] > svg {
+	color: #323e48 !important;
+}
+
+div[role='main'] {
+	top: 0 !important;
+	height: 100vh !important;
+	border-left: thin solid #323e48;
+}
+
+div[role='main'] > div {
+	box-shadow: none;
+}
