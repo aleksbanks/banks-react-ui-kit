@@ -5,6 +5,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
+	font-family: var(--font-family), sans-serif;
 }
 
 .button:disabled {

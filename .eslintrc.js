@@ -25,7 +25,7 @@ module.exports = {
 		},
 	},
 	root: true,
-	plugins: ['@typescript-eslint', 'react', 'prettier', 'import', 'react-hooks'],
+	plugins: ['@typescript-eslint', 'react', 'prettier', 'import', 'react-hooks', 'unused-imports'],
 	settings: {
 		react: {
 			version: 'detect',
@@ -45,9 +45,10 @@ module.exports = {
 	rules: {
 		'prettier/prettier': 'warn',
 		'import/no-extraneous-dependencies': [
-			'warn',
+			'error',
 			{
-				optionalDependencies: ['@storybook/react'],
+				devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*', '**/*.config.js'],
+				peerDependencies: true,
 			},
 		],
 		'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
@@ -176,6 +177,16 @@ module.exports = {
 				'@typescript-eslint/explicit-module-boundary-types': 0,
 				'no-shadow': 'off',
 				'@typescript-eslint/no-shadow': ['error'],
+				'unused-imports/no-unused-imports': 'error',
+				'unused-imports/no-unused-vars': [
+					'warn',
+					{
+						vars: 'all',
+						varsIgnorePattern: '^_',
+						args: 'after-used',
+						argsIgnorePattern: '^_',
+					},
+				],
 				'@typescript-eslint/no-unused-vars': [
 					'error',
 					{

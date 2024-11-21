@@ -1,0 +1,58 @@
+.baseStyles {
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-family), sans-serif;
+	color: inherit;
+	letter-spacing: normal;
+	font-stretch: normal;
+	font-style: normal;
+	word-break: break-word;
+	cursor: inherit;
+	white-space: pre-wrap;
+}
+
+.nowrap {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.h1 {
+	font-size: var(--font-size-heading-1);
+	font-weight: var(--font-weight-bold);
+}
+
+.h2 {
+	font-size: var(--font-size-heading-2);
+	font-weight: var(--font-weight-bold);
+}
+
+.h3 {
+	font-size: var(--font-size-heading-3);
+	font-weight: var(--font-weight-bold);
+}
+
+.body-xl {
+	font-size: var(--font-size-body-xl);
+	font-weight: var(--font-weight-regular);
+}
+
+.body-l {
+	font-size: var(--font-size-body-l);
+	font-weight: var(--font-weight-regular);
+}
+
+.body-m {
+	font-size: var(--font-size-body-m);
+	font-weight: var(--font-weight-regular);
+}
+
+.body-s {
+	font-size: var(--font-size-body-s);
+	font-weight: var(--font-weight-regular);
+}
+
+.body-xs {
+	font-size: var(--font-size-body-xs);
+	font-weight: var(--font-weight-regular);
+}

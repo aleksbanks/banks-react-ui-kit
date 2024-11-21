@@ -15,7 +15,7 @@ export const ButtonStory = Template.bind({})
 ButtonStory.args = {
 	label: 'Button',
 	variant: 'primary',
-	size: 'medium',
+	size: 'm',
 	radius: 'round',
 	loading: false,
 }

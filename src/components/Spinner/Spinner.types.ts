@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react'
 
-import type { Size } from 'common/types'
+import type { Size } from 'types/common.types'
 
 export type SpinnerSize = Exclude<Size, 'xs'>
 
