@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import type { Radius, Size, UiVariant } from 'common/types'
+import type { Radius, Size, UiVariant } from 'types/common.types'
 
 export type ButtonSize = Extract<Size, 's' | 'm' | 'l'>
 export type ButtonVariant = UiVariant
