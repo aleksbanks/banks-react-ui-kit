@@ -9,7 +9,6 @@ export const parameters = {
 			method: 'alphabetical',
 		},
 	},
-
 	controls: {
 		matchers: {
 			color: /(background|color)$/i,
@@ -17,3 +16,5 @@ export const parameters = {
 		},
 	},
 }
+
+export const tags = ['autodocs']
