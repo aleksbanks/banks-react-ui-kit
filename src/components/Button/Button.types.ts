@@ -1,8 +1,10 @@
 import React, { ReactNode } from 'react'
 
-export type ButtonSize = 'small' | 'medium' | 'large'
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
-export type ButtonRadius = 'round' | 'square'
+import type { Radius, Size, UiVariant } from 'common/types'
+
+export type ButtonSize = Extract<Size, 's' | 'm' | 'l'>
+export type ButtonVariant = UiVariant
+export type ButtonRadius = Extract<Radius, 'round' | 'square'>
 
 export type ButtonProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'size'> & {
 	/** How large should the button be? */

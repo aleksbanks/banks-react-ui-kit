@@ -1,6 +1,8 @@
 import type { HTMLAttributes } from 'react'
 
-export type SpinnerSize = 's' | 'm' | 'l' | 'xl'
+import type { Size } from 'common/types'
+
+export type SpinnerSize = Exclude<Size, 'xs'>
 
 export interface SpinnerProps extends HTMLAttributes<SVGElement> {
 	size?: SpinnerSize
