@@ -26,6 +26,36 @@
 	--color-secondary-20: #e3e7eb;
 	--color-secondary-10: #f7f8f9;
 
+	/* Error */
+	--color-error-90: #b02b0c;
+	--color-error-70: #f04d29;
+	--color-error-40: #f9b8a9;
+	--color-errory-20: #feefec;
+
+	/* Success */
+	--color-success-90: #4a8700;
+	--color-success-70: #77cb10;
+	--color-success-40: #c8f68f;
+	--color-success-20: #effcde;
+
+	/* Warning */
+	--color-warning-90: #bb8b00;
+	--color-warning-70: #ffbe00;
+	--color-warning-40: #ffdc77;
+	--color-warning-20: #fff2cc;
+
+	/* Info */
+	--color-info-90: #007199;
+	--color-info-70: #12a8dd;
+	--color-info-40: #86dfff;
+	--color-info-20: #e9f9ff;
+
+	/* Accent */
+	--color-accent-90: #3e3094;
+	--color-accent-70: #6351ce;
+	--color-accent-40: #aca0f3;
+	--color-accent-20: #e1dcfb;
+
 	/* Radius */
 	--radius-square: 4px;
 	--radius-round: 12px;
