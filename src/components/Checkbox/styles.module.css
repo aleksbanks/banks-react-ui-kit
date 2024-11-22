@@ -1,0 +1,204 @@
+.checkboxWrapper {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	gap: 8px;
+}
+
+.checkboxWrapper:has(.checkbox:disabled) {
+	cursor: default;
+}
+
+.labelSideLeft {
+	flex-direction: row-reverse;
+}
+
+/* Base */
+.checkbox {
+	margin: 0;
+	padding: 2px;
+	appearance: none;
+	outline: none;
+	border-radius: 4px;
+	position: relative;
+	background-color: var(--color-secondary-10);
+	border: thin solid var(--color-secondary-60);
+	cursor: pointer;
+}
+
+/* Disabled */
+.checkbox:disabled {
+	cursor: default;
+}
+
+.checkbox:disabled,
+.checkbox:checked:disabled {
+	background-color: var(--color-secondary-30);
+	border-color: var(--color-secondary-50);
+}
+
+/* Checked */
+.checkbox:checked {
+	background-color: var(--color-primary-50);
+	border-color: var(--color-primary-50);
+}
+
+.checkbox:checked:before {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Hover */
+.checkbox:hover {
+	border-color: var(--color-primary-70);
+}
+
+.checkbox:checked:hover {
+	background-color: var(--color-primary-60);
+	border-color: var(--color-primary-60);
+}
+
+.checkbox:active {
+	border-color: var(--color-primary-80);
+}
+
+.checkbox:checked:active {
+	border-color: var(--color-primary-70);
+	background-color: var(--color-primary-70);
+}
+
+/* Size */
+.checkbox-s:checked::before {
+	left: 53%;
+	content: url("data:image/svg+xml,%3Csvg width='9' height='8' viewBox='0 0 9 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.66667 1.29438L3.23429 6.33325L0 3.33325L1.03619 2.37212L3.23429 4.41099L7.63048 0.333252L8.66667 1.29438Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.checkbox-m:checked::before {
+	content: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13 1.4417L4.85143 9L0 4.5L1.55429 3.0583L4.85143 6.1166L11.4457 0L13 1.4417Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.checkbox-s {
+	width: 16px;
+	height: 16px;
+	min-height: 16px;
+	max-width: 16px;
+}
+
+.checkbox-m {
+	width: 24px;
+	height: 24px;
+	min-height: 24px;
+	max-width: 24px;
+}
+
+/* Status */
+.checkbox-error {
+	border-color: var(--color-error-70);
+}
+
+.checkbox-error:checked {
+	background-color: var(--color-error-70);
+	border-color: var(--color-error-70);
+}
+
+.checkbox-error:hover {
+	border-color: var(--color-error-90);
+}
+
+.checkbox-error:checked:hover {
+	background-color: var(--color-error-90);
+	border-color: var(--color-error-90);
+}
+
+.checkbox-success {
+	border-color: var(--color-success-70);
+}
+
+.checkbox-success:checked {
+	background-color: var(--color-success-70);
+	border-color: var(--color-success-70);
+}
+
+.checkbox-success:hover {
+	border-color: var(--color-success-90);
+}
+
+.checkbox-success:checked:hover {
+	background-color: var(--color-success-90);
+	border-color: var(--color-success-90);
+}
+
+.checkbox-warning {
+	border-color: var(--color-warning-70);
+}
+
+.checkbox-warning:checked {
+	background-color: var(--color-warning-70);
+	border-color: var(--color-warning-70);
+}
+
+.checkbox-warning:hover {
+	border-color: var(--color-warning-90);
+}
+
+.checkbox-warning:checked:hover {
+	background-color: var(--color-warning-90);
+	border-color: var(--color-warning-90);
+}
+
+.checkbox-info {
+	border-color: var(--color-info-70);
+}
+
+.checkbox-info:checked {
+	background-color: var(--color-info-70);
+	border-color: var(--color-info-70);
+}
+
+.checkbox-info:hover {
+	border-color: var(--color-info-90);
+}
+
+.checkbox-info:checked:hover {
+	background-color: var(--color-info-90);
+	border-color: var(--color-info-90);
+}
+
+.checkbox-accent {
+	border-color: var(--color-accent-70);
+}
+
+.checkbox-accent:checked {
+	background-color: var(--color-accent-70);
+	border-color: var(--color-accent-70);
+}
+
+.checkbox-accent:hover {
+	border-color: var(--color-accent-90);
+}
+
+.checkbox-accent:checked:hover {
+	background-color: var(--color-accent-90);
+	border-color: var(--color-accent-90);
+}
+
+/* Image */
+.image-s {
+	width: 24px;
+	height: 24px;
+}
+
+.image-m {
+	width: 32px;
+	height: 32px;
+}
+
+/* Label */
+.labelComponent {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
