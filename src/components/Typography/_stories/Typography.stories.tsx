@@ -8,7 +8,7 @@ import type { Meta, StoryFn } from '@storybook/react'
 const componentName = 'Typography'
 
 export default {
-	title: 'Другое/Typography',
+	title: 'Basic/Typography',
 	component: Typography,
 	argTypes: {
 		color: {
