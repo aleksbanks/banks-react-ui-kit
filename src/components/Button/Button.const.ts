@@ -1,6 +1,6 @@
 import type { ButtonRadius, ButtonSize, ButtonVariant } from './Button.types'
 
-import styles from './styles.module.css'
+import styles from './Button.module.css'
 
 export const buttonClassByVariant: Record<ButtonVariant, string> = {
 	primary: styles.primary,

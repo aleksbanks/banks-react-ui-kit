@@ -102,12 +102,12 @@ module.exports = {
 						position: 'before',
 					},
 					{
-						pattern: './styles.module.css',
+						pattern: './*.module.css',
 						group: 'type',
 						position: 'after',
 					},
 				],
-				pathGroupsExcludedImportTypes: ['react', './styles.module.css'],
+				pathGroupsExcludedImportTypes: ['react', './RadioButton.module.css'],
 				alphabetize: {
 					order: 'asc',
 					caseInsensitive: true,

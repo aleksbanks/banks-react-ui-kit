@@ -1,17 +1,12 @@
 import type { InputHTMLAttributes, ReactNode, Ref } from 'react'
 
-import type { Position, Size, Status } from 'types/common.types'
+import type { ImageProps, Position, Size, Status } from 'types/common.types'
 
 export type CheckboxTextSide = Extract<Position, 'right' | 'left'>
 
 export type CheckboxStatus = Status
 
 export type CheckboxSize = Extract<Size, 's' | 'm'>
-
-export type CheckboxImageProps = {
-	src: string
-	alt?: string
-}
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
 	/** Label text near checkbox */
@@ -27,7 +22,7 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> 
 	checked?: boolean
 
 	/** Image placed near label*/
-	image?: CheckboxImageProps
+	image?: ImageProps
 
 	/** Size of checkbox */
 	size?: CheckboxSize

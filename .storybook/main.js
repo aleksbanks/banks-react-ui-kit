@@ -9,6 +9,8 @@ module.exports = {
 		'@storybook/addon-interactions',
 		'@storybook/addon-webpack5-compiler-swc',
 		'@chromatic-com/storybook',
+		'@storybook/addon-styling-webpack',
+		'storybook-css-modules',
 	],
 
 	typescript: {

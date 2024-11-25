@@ -6,7 +6,7 @@ import type { ButtonProps } from '.'
 import { buttonClassByRadius, buttonClassBySize, buttonClassByVariant } from './Button.const'
 import { Spinner } from '../Spinner'
 
-import styles from './styles.module.css'
+import styles from './Button.module.css'
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(

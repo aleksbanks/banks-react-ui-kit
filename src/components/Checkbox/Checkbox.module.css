@@ -9,6 +9,10 @@
 	cursor: default;
 }
 
+.checkboxWrapper:has(.radioButton:disabled) .image {
+	opacity: 0.5;
+}
+
 .labelSideLeft {
 	flex-direction: row-reverse;
 }
