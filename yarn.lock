@@ -648,6 +648,13 @@
     "@storybook/global" "^5.0.0"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-styling-webpack@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-styling-webpack/-/addon-styling-webpack-1.0.1.tgz#660ee002ec249f6e32dd2784abfa50f59ef97951"
+  integrity sha512-5n+SXPfMTc4m7sWaJWPWjoHYWc6/B111M2Ia55toQ3GV4ON4vVlTgH9FX+EgCkDticElj99HLTMDJkHRj2yvkg==
+  dependencies:
+    "@storybook/node-logger" "^8.0.0-alpha.10"
+
 "@storybook/addon-toolbars@8.4.4":
   version "8.4.4"
   resolved "https://registry.npmjs.org/@storybook/addon-toolbars/-/addon-toolbars-8.4.4.tgz"
@@ -836,6 +843,11 @@
   version "8.4.4"
   resolved "https://registry.npmjs.org/@storybook/manager-api/-/manager-api-8.4.4.tgz"
   integrity sha512-rmNPcbEyzakEHoaecUbhkW7WWOkyZ0z7ywH4d5/s0ZuQS57Px2N+ZLVgRJwYK+YNHiJYqDf1BTln9YJ/Mt1L6Q==
+
+"@storybook/node-logger@^8.0.0-alpha.10":
+  version "8.4.5"
+  resolved "https://registry.npmjs.org/@storybook/node-logger/-/node-logger-8.4.5.tgz"
+  integrity sha512-AVK/w17vrjTnmdfkHQaIjSFJDP9lJ/fXCT2d9/POUz6KXH0sTWFDb6dPMnjX+Fcu5Ef28kT91RQ+lnWUmLql8Q==
 
 "@storybook/preset-react-webpack@8.4.4":
   version "8.4.4"
@@ -4809,6 +4821,11 @@ store2@^2.14.2:
   version "2.14.3"
   resolved "https://registry.npmjs.org/store2/-/store2-2.14.3.tgz"
   integrity sha512-4QcZ+yx7nzEFiV4BMLnr/pRa5HYzNITX2ri0Zh6sT9EyQHbBHacC6YigllUPU9X3D0f/22QCgfokpKs52YRrUg==
+
+storybook-css-modules@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/storybook-css-modules/-/storybook-css-modules-1.0.8.tgz"
+  integrity sha512-anITwllH6nLw0quPElVBLRrE8QDbcRv0Dgl8sKLOc4uiqw+g1GE2l21Stjx3Wyv2O6ZKJScbyOpOuuz3SmeaOQ==
 
 storybook@^8.4.4:
   version "8.4.4"

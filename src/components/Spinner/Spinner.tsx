@@ -5,7 +5,7 @@ import { classNames } from 'utils/classNames'
 import type { SpinnerProps } from '.'
 import { spinnerClassBySize } from './Spinner.const'
 
-import styles from './styles.module.css'
+import styles from './Spinner.module.css'
 
 export const Spinner = ({ size = 'm', ...props }: SpinnerProps) => {
 	return (

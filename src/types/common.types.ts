@@ -7,3 +7,8 @@ export type Status = 'error' | 'success' | 'warning' | 'neutral' | 'info' | 'acc
 export type Size = 'xs' | 's' | 'm' | 'l' | 'xl'
 
 export type Radius = 'round' | 'square' | 'oval'
+
+export type ImageProps = {
+	src: string
+	alt?: string
+}

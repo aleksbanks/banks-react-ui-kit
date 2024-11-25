@@ -4,7 +4,7 @@ import { classNames } from 'utils/classNames'
 
 import type { TypographyProps } from './Typography.types'
 
-import styles from './styles.module.css'
+import styles from './Typography.module.css'
 
 export const Typography = forwardRef<HTMLParagraphElement, TypographyProps>(
 	({ text, color, fontWeight, fullWidth = false, lineHeight, noWrap, variant = 'body-l', children, ...props }, ref) => {

@@ -9,7 +9,7 @@ import type { CheckboxProps } from './Checkbox.types'
 import { RequiredIcon } from '../RequiredIcon'
 import { Typography } from '../Typography'
 
-import styles from './styles.module.css'
+import styles from './Checkbox.module.css'
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 	(
@@ -45,7 +45,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 		const labelComponent = useMemo(
 			() => (
 				<div className={styles.labelComponent}>
-					{image && <img alt={image.alt} className={styles[`image-${size}`]} src={image.src} />}
+					{image && (
+						<img alt={image.alt} className={classNames(styles.image, styles[`image-${size}`])} src={image.src} />
+					)}
 					<Typography variant={typographyVariantByCheckboxSize[size]}>
 						{label}
 						{required && <RequiredIcon />}
