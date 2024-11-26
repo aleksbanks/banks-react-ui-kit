@@ -28,7 +28,7 @@
 
 .toggle {
 	position: relative;
-	border-radius: 12px;
+	border-radius: var(--radius-round);
 	transition: background-color 0.5s ease;
 	background-color: var(--color-secondary-40);
 	cursor: pointer;
@@ -41,7 +41,7 @@
 .slider {
 	position: absolute;
 	top: 2px;
-	border-radius: 50%;
+	border-radius: var(--radius-circle);
 	transition: transform 0.4s ease;
 	background-color: var(--color-secondary-10);
 	transform: translateX(2px);

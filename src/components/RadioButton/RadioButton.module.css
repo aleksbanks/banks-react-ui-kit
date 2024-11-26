@@ -20,7 +20,7 @@
 .radioButton {
 	appearance: none;
 	outline: none;
-	border-radius: 50%;
+	border-radius: var(--radius-circle);
 	border: thin solid var(--color-secondary-50);
 	background-color: var(--color-secondary-10);
 	position: relative;
@@ -61,7 +61,7 @@
 	position: absolute;
 	width: 8px;
 	height: 8px;
-	border-radius: 50%;
+	border-radius: var(--radius-circle);
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
