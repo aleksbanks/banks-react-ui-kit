@@ -15,4 +15,4 @@ export const LOREM_IPSUM =
 	'sed sodales turpis mattis. Nullam elementum consequat dapibus. Donec justo augue, iaculis ut neque pharetra,' +
 	'dignissim laoreet arcu. Mauris ornare sit amet augue quis convallis. Phasellus eleifend tellus in nulla feugiat' +
 	'fermentum. Sed fringilla justo nec neque malesuada, id commodo erat convallis. Aliquam risus nulla, tristique ac' +
-	'pulvinar dapibus, elementum ut lectus. Vestibulum vitae tortor eget nibh vestibulum porta.';
+	'pulvinar dapibus, elementum ut lectus. Vestibulum vitae tortor eget nibh vestibulum porta.'

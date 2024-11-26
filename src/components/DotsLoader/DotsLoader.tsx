@@ -2,8 +2,9 @@ import React, { forwardRef } from 'react'
 
 import { classNames } from 'utils'
 
-import styles from './DotsLoader.module.css'
 import type { DotsLoaderProps } from './DotsLoader.types'
+
+import styles from './DotsLoader.module.css'
 
 export const DotsLoader = forwardRef<HTMLDivElement, DotsLoaderProps>(({ size = 'm', color, ...props }, ref) => {
 	return (

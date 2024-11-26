@@ -1,0 +1,104 @@
+/* Base*/
+.toggleWrapper {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.labelSideLeft {
+	flex-direction: row-reverse;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: fit-content;
+}
+
+.hiddenCheckbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.toggle {
+	position: relative;
+	border-radius: 12px;
+	transition: background-color 0.5s ease;
+	background-color: var(--color-secondary-40);
+	cursor: pointer;
+}
+
+.checkedToggle {
+	background-color: var(--color-primary-60);
+}
+
+.slider {
+	position: absolute;
+	top: 2px;
+	border-radius: 50%;
+	transition: transform 0.4s ease;
+	background-color: var(--color-secondary-10);
+	transform: translateX(2px);
+}
+
+/* Size */
+.toggle-s {
+	width: 32px;
+	height: 16px;
+}
+
+.toggle-m {
+	width: 48px;
+	height: 24px;
+}
+
+.slider-s {
+	width: 12px;
+	height: 12px;
+}
+
+.slider-m {
+	width: 20px;
+	height: 20px;
+}
+
+.checkedSlider-s {
+	transform: translateX(18px);
+}
+
+.checkedSlider-m {
+	transform: translateX(24px);
+}
+
+/* States */
+.toggle:hover {
+	background-color: var(--color-secondary-60);
+}
+
+.toggle:active {
+	background-color: var(--color-secondary-70);
+}
+
+.checkedToggle:hover {
+	background-color: var(--color-primary-60);
+}
+
+.checkedToggle:active {
+	background-color: var(--color-primary-70);
+}
+
+/* Disabled */
+.disabledToggle {
+	cursor: default;
+	background-color: var(--color-secondary-20) !important;
+}
+
+.disabledWrapper {
+	color: var(--color-secondary-60);
+}
