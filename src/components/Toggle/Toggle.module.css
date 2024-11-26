@@ -2,7 +2,7 @@
 .toggleWrapper {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: var(--space-xs);
 }
 
 .labelSideLeft {
@@ -12,7 +12,7 @@
 .wrapper {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: var(--space-s);
 	width: fit-content;
 }
 
@@ -49,23 +49,23 @@
 
 /* Size */
 .toggle-s {
-	width: 32px;
-	height: 16px;
+	width: var(--space-xxl);
+	height: var(--space-m);
 }
 
 .toggle-m {
 	width: 48px;
-	height: 24px;
+	height: var(--space-xl);
 }
 
 .slider-s {
-	width: 12px;
-	height: 12px;
+	width: var(--space-s);
+	height: var(--space-s);
 }
 
 .slider-m {
-	width: 20px;
-	height: 20px;
+	width: var(--space-l);
+	height: var(--space-l);
 }
 
 .checkedSlider-s {
@@ -73,7 +73,7 @@
 }
 
 .checkedSlider-m {
-	transform: translateX(24px);
+	transform: translateX(var(--space-xl));
 }
 
 /* States */
