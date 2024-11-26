@@ -59,6 +59,7 @@
 	/* Radius */
 	--radius-square: 4px;
 	--radius-round: 12px;
+	--radius-circle: 50%;
 
 	/* Spacing */
 	--space-xxl: 32px;
