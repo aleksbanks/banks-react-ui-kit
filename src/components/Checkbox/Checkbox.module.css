@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	gap: 8px;
+	gap: var(--space-xs);
 }
 
 .checkboxWrapper:has(.checkbox:disabled) {
@@ -85,17 +85,17 @@
 }
 
 .checkbox-s {
-	width: 16px;
-	height: 16px;
-	min-height: 16px;
-	max-width: 16px;
+	width: var(--space-m);
+	height: var(--space-m);
+	min-height: var(--space-m);
+	max-width: var(--space-m);
 }
 
 .checkbox-m {
-	width: 24px;
-	height: 24px;
-	min-height: 24px;
-	max-width: 24px;
+	width: var(--space-xl);
+	height: var(--space-xl);
+	min-height: var(--space-xl);
+	max-width: var(--space-xl);
 }
 
 /* Status */
@@ -191,18 +191,18 @@
 
 /* Image */
 .image-s {
-	width: 24px;
-	height: 24px;
+	width: var(--space-xl);
+	height: var(--space-xl);
 }
 
 .image-m {
-	width: 32px;
-	height: 32px;
+	width: var(--space-xxl);
+	height: var(--space-xxl);
 }
 
 /* Label */
 .labelComponent {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: var(--space-s);
 }

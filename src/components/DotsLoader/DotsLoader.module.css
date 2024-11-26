@@ -18,14 +18,14 @@
 }
 
 .dot-s {
-	width: 4px;
-	height: 4px;
+	width: var(--space-xxs);
+	height: var(--space-xxs);
 	animation: opacity 1.5s infinite, growSmall 1.5s infinite;
 }
 
 .dot-m {
-	width: 8px;
-	height: 8px;
+	width: var(--space-xs);
+	height: var(--space-xs);
 	animation: opacity 1.5s infinite, growLarge 1.5s infinite;
 }
 
@@ -42,20 +42,20 @@
 @keyframes growLarge {
 	0%,
 	100% {
-		width: 8px;
-		height: 8px;
+		width: var(--space-xs);
+		height: var(--space-xs);
 	}
 	50% {
-		width: 12px;
-		height: 12px;
+		width: var(--space-s);
+		height: var(--space-s);
 	}
 }
 
 @keyframes growSmall {
 	0%,
 	100% {
-		width: 4px;
-		height: 4px;
+		width: var(--space-xxs);
+		height: var(--space-xxs);
 	}
 	50% {
 		width: 6px;

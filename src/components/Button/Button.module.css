@@ -62,41 +62,41 @@
 
 /* Sizes */
 .small {
-	height: 32px;
-	padding: 8px;
-	min-width: 32px;
+	height: var(--space-xxl);
+	padding: var(--space-xs);
+	min-width: var(--space-xxl);
 	font-size: var(--font-size-body-m);
 	gap: var(--space-xxs);
 
 	svg {
-		width: 16px;
-		height: 16px;
+		width: var(--space-m);
+		height: var(--space-m);
 	}
 }
 
 .medium {
 	height: 40px;
-	padding: 8px 12px;
+	padding: var(--space-xs) var(--space-s);
 	min-width: 40px;
 	font-size: var(--font-size-body-l);
 	gap: var(--space-xxs);
 
 	svg {
-		width: 20px;
-		height: 20px;
+		width: var(--space-l);
+		height: var(--space-l);
 	}
 }
 
 .large {
 	height: 48px;
-	padding: 12px 16px;
+	padding: var(--space-s) var(--space-m);
 	min-width: 48px;
 	font-size: var(--font-size-body-xl);
 	gap: var(--space-xs);
 
 	svg {
-		width: 24px;
-		height: 24px;
+		width: var(--space-xl);
+		height: var(--space-xl);
 	}
 }
 
