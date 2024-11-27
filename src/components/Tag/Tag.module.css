@@ -1,0 +1,187 @@
+/* Base */
+.tag {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-secondary-10);
+	color: var(--color-primary-50);
+	border: thin solid var(--color-primary-50);
+	cursor: default;
+}
+
+.tag:hover {
+	color: var(--color-primary-60);
+	border-color: var(--color-primary-60);
+}
+
+.icon {
+	color: inherit;
+	display: flex;
+	align-items: center;
+}
+
+/* Size */
+.tag-xs {
+	gap: var(--space-xxs);
+	padding: 2px var(--space-xxs);
+	border-radius: var(--radius-square);
+}
+
+.tag-s {
+	gap: var(--space-xs);
+	padding: var(--space-xxs) var(--space-xs);
+	border-radius: var(--radius-square);
+}
+
+.tag-m {
+	gap: var(--space-s);
+	padding: var(--space-xs) var(--space-s);
+	border-radius: var(--radius-round);
+}
+
+.icon-xs {
+	width: var(--space-xs);
+	height: var(--space-xs);
+
+	svg {
+		width: var(--space-xs);
+		height: var(--space-xs);
+	}
+}
+
+.icon-s {
+	svg {
+		width: var(--space-s);
+		height: var(--space-s);
+	}
+}
+
+.icon-m {
+	svg {
+		width: var(--space-m);
+		height: var(--space-m);
+	}
+}
+
+/* Selected */
+.tagSelected {
+	background-color: var(--color-primary-40);
+	color: var(--color-primary-70);
+	border-color: var(--color-primary-70);
+}
+
+.tagSelected:hover {
+	color: var(--color-primary-80);
+	border-color: var(--color-primary-80);
+}
+
+/* Disabled */
+.tagDisabled {
+	background-color: var(--color-secondary-30);
+	border-color: var(--color-secondary-30);
+	color: var(--color-secondary-40);
+	cursor: default;
+}
+
+/* Statuses */
+.tag-error {
+	border-color: var(--color-error-70);
+	color: var(--color-error-70);
+}
+
+.tagSelected-error {
+	background-color: var(--color-error-90);
+	border-color: var(--color-error-90);
+	color: var(--color-secondary-10);
+}
+
+.tag-error:hover {
+	border-color: var(--color-error-90);
+	color: var(--color-error-90);
+}
+
+.tagSelected-error:hover {
+	border-color: var(--color-error-90);
+	color: var(--color-secondary-30);
+}
+
+.tag-success {
+	border-color: var(--color-success-70);
+}
+
+.tagSelected-success {
+	background-color: var(--color-success-70);
+	border-color: var(--color-success-70);
+	color: var(--color-secondary-10);
+}
+
+.tagSelected-success:hover {
+	background-color: var(--color-success-70);
+	border-color: var(--color-success-70);
+	color: var(--color-secondary-30);
+}
+
+.tag-warning {
+	border-color: var(--color-warning-70);
+	color: var(--color-warning-70);
+}
+
+.tagSelected-warning {
+	background-color: var(--color-warning-70);
+	border-color: var(--color-warning-70);
+	color: var(--color-secondary-10);
+}
+
+.tag-warning:hover {
+	border-color: var(--color-warning-90);
+	color: var(--color-warning-90);
+}
+
+.tagSelected-warning:hover {
+	background-color: var(--color-warning-70);
+	border-color: var(--color-warning-70);
+	color: var(--color-secondary-30);
+}
+
+.tag-info {
+	border-color: var(--color-info-70);
+	color: var(--color-info-70);
+}
+
+.tagSelected-info {
+	background-color: var(--color-info-70);
+	border-color: var(--color-info-70);
+	color: var(--color-secondary-10);
+}
+
+.tag-info:hover {
+	border-color: var(--color-info-90);
+	color: var(--color-info-90);
+}
+
+.tagSelected-info:hover {
+	background-color: var(--color-info-70);
+	border-color: var(--color-info-70);
+	color: var(--color-secondary-30);
+}
+
+.tag-accent {
+	border-color: var(--color-accent-70);
+	color: var(--color-accent-70);
+}
+
+.tagSelected-accent {
+	background-color: var(--color-accent-70);
+	border-color: var(--color-accent-70);
+	color: var(--color-secondary-10);
+}
+
+.tag-accent:hover {
+	border-color: var(--color-accent-90);
+	color: var(--color-accent-90);
+}
+
+.tagSelected-accent:hover {
+	background-color: var(--color-accent-70);
+	border-color: var(--color-accent-70);
+	color: var(--color-secondary-30);
+}
