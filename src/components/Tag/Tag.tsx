@@ -8,7 +8,7 @@ import { Typography } from '../Typography'
 
 import styles from './Tag.module.css'
 
-export const Tag = forwardRef<HTMLDivElement, TagProps>(
+export const Tag = forwardRef<HTMLElement, TagProps>(
 	(
 		{
 			size = 'm',
@@ -20,31 +20,63 @@ export const Tag = forwardRef<HTMLDivElement, TagProps>(
 			startIcon,
 			endIcon,
 			text,
+			onClick,
+			className,
 			...props
 		},
 		ref,
 	) => {
-		return (
-			<div
-				ref={ref}
-				className={classNames(
-					styles.tag,
-					isSelected && styles.tagSelected,
-					disabled && styles.tagDisabled,
-					styles[`tag-${size}`],
-					isSelected ? styles[`tagSelected-${status}`] : styles[`tag-${status}`],
+		const isInteractive = Boolean(onClick)
+		const classNamesList = classNames(
+			styles.tag,
+			isSelected && styles.tagSelected,
+			disabled && styles.tagDisabled,
+			isInteractive && styles.tagInteractive,
+			styles[`tag-${size}`],
+			isSelected ? styles[`tagSelected-${status}`] : styles[`tag-${status}`],
+			className,
+		)
+		const content = (
+			<>
+				{startIcon && (
+					<span aria-hidden className={classNames(styles.icon, styles[`icon-${size}`])}>
+						{startIcon}
+					</span>
 				)}
-				style={{
+				<Typography as='span' variant={typographyVariantByTagSize[size]}>
+					{text}
+				</Typography>
+				{endIcon && (
+					<span aria-hidden className={classNames(styles.icon, styles[`icon-${size}`])}>
+						{endIcon}
+					</span>
+				)}
+			</>
+		)
+
+		return React.createElement(
+			isInteractive ? 'button' : 'span',
+			{
+				...props,
+				ref,
+				className: classNamesList,
+				style: {
 					backgroundColor: bgColor,
-					color: color,
+					color,
 					borderColor: color,
-				}}
-				{...props}
-			>
-				{startIcon && <div className={classNames(styles.icon, styles[`icon-${size}`])}>{startIcon}</div>}
-				<Typography variant={typographyVariantByTagSize[size]}>{text}</Typography>
-				{endIcon && <div className={classNames(styles.icon, styles[`icon-${size}`])}>{endIcon}</div>}
-			</div>
+				},
+				...(isInteractive
+					? {
+							type: 'button',
+							disabled,
+							'aria-pressed': isSelected,
+							onClick,
+					  }
+					: {
+							'aria-disabled': disabled || undefined,
+					  }),
+			},
+			content,
 		)
 	},
 )

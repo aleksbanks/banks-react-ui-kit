@@ -8,8 +8,18 @@
 	font-family: var(--font-family), sans-serif;
 }
 
+.button:focus {
+	outline: none;
+}
+
+.button:focus-visible {
+	outline: var(--focus-ring-width) solid var(--color-primary-50);
+	outline-offset: var(--focus-ring-offset);
+}
+
 .button:disabled {
 	cursor: default;
+	opacity: 0.56;
 }
 
 /* Variants */
@@ -75,9 +85,9 @@
 }
 
 .medium {
-	height: 40px;
+	height: var(--size-control-m);
 	padding: var(--space-xs) var(--space-s);
-	min-width: 40px;
+	min-width: var(--size-control-m);
 	font-size: var(--font-size-body-l);
 	gap: var(--space-xxs);
 
@@ -88,9 +98,9 @@
 }
 
 .large {
-	height: 48px;
+	height: var(--size-control-l);
 	padding: var(--space-s) var(--space-m);
-	min-width: 48px;
+	min-width: var(--size-control-l);
 	font-size: var(--font-size-body-xl);
 	gap: var(--space-xs);
 

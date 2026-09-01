@@ -11,8 +11,6 @@ export type ButtonProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 's
 	size?: ButtonSize
 	/** Button contents */
 	label: string
-	/** Optional click handler */
-	onClick?: () => void
 	/** Button variant */
 	variant?: ButtonVariant
 	/** Button radius */

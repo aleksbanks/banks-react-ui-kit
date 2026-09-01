@@ -1,7 +1,9 @@
 import React from 'react'
 
+import { useSwitcher } from 'hooks'
+
 import { Checkbox, type CheckboxProps } from '..'
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react-webpack5'
 
 const componentName = 'Checkbox'
 
@@ -10,7 +12,10 @@ export default {
 	component: Checkbox,
 } as Meta<typeof Checkbox>
 
-const Template: StoryFn<typeof Checkbox> = ({ ...args }: CheckboxProps) => <Checkbox {...args} />
+const Template: StoryFn<typeof Checkbox> = ({ checked = false, ...args }: CheckboxProps) => {
+	const [isChecked, , , toggleIsChecked] = useSwitcher(checked)
+	return <Checkbox {...args} checked={isChecked} onChange={toggleIsChecked} />
+}
 
 export const CheckboxStory = Template.bind({})
 CheckboxStory.storyName = componentName
@@ -20,10 +25,6 @@ CheckboxStory.args = {
 	disabled: false,
 	labelSide: 'right',
 	required: false,
+	indeterminate: false,
 	status: 'neutral',
-	// Uncomment this to use image
-	// image: {
-	// 	src: 'https://cdn-icons-png.flaticon.com/512/147/147142.png?w=1380&t=st=1683113325~exp=1683113925~hmac=db2820b1a94747a5c5173e92017f44e6e5643dc45635583487e2792e95c94315',
-	// 	alt: 'Описание изображения',
-	// },
 }

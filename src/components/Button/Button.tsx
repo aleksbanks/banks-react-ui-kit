@@ -19,6 +19,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			startIcon,
 			endIcon,
 			fullWidth,
+			disabled,
+			type = 'button',
+			className: classNameProp,
 			...props
 		},
 		ref,
@@ -29,19 +32,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			buttonClassByRadius[radius],
 			buttonClassByVariant[variant],
 			buttonClassBySize[size],
+			classNameProp,
 		)
 
-		const loader = useMemo(() => <Spinner size={size} />, [size])
+		const loader = useMemo(() => <Spinner aria-hidden size={size} />, [size])
 
 		return (
-			<button className={className} ref={ref} {...props}>
+			<button
+				ref={ref}
+				{...props}
+				aria-busy={loading || undefined}
+				className={className}
+				disabled={disabled || loading}
+				type={type}
+				{...(loading ? { 'aria-label': label } : null)}
+			>
 				{loading ? (
 					loader
 				) : (
 					<>
-						{startIcon}
+						{startIcon && <span aria-hidden>{startIcon}</span>}
 						{label}
-						{endIcon}
+						{endIcon && <span aria-hidden>{endIcon}</span>}
 					</>
 				)}
 			</button>

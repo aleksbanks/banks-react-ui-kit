@@ -1,6 +1,6 @@
 .loaderWrapper {
 	display: flex;
-	gap: 2px;
+	gap: var(--space-hairline);
 }
 
 .loaderWrapper .dot:nth-child(2) {
@@ -58,7 +58,7 @@
 		height: var(--space-xxs);
 	}
 	50% {
-		width: 6px;
-		height: 6px;
+		width: calc(var(--space-xxs) + var(--space-hairline));
+		height: calc(var(--space-xxs) + var(--space-hairline));
 	}
 }

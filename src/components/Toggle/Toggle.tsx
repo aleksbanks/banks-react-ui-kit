@@ -10,21 +10,22 @@ import { typographyVariantByToggleSize } from './Toggle.const'
 import styles from './Toggle.module.css'
 
 export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
-	({ labelSide = 'right', disabled, checked, size = 'm', rootRef, id, label, ...props }, ref) => {
+	({ labelSide = 'right', disabled, checked, size = 'm', rootRef, id, label, className, ...props }, ref) => {
 		const toggleRef = useRef<HTMLInputElement>(null)
 		const fieldId = useInputId(id)
 
 		const labelComponent = useMemo(() => {
 			if (!label) return null
 			return (
-				<Typography fullWidth={false} variant={typographyVariantByToggleSize[size]}>
+				<Typography as='span' fullWidth={false} variant={typographyVariantByToggleSize[size]}>
 					{label}
 				</Typography>
 			)
 		}, [label, size])
 
 		return (
-			<div
+			<label
+				htmlFor={fieldId}
 				ref={rootRef}
 				className={classNames(
 					styles.toggleWrapper,
@@ -32,35 +33,32 @@ export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
 					disabled && styles.disabledWrapper,
 				)}
 			>
-				<label>
-					<input
-						checked={checked}
-						className={styles.hiddenCheckbox}
-						disabled={disabled}
-						id={fieldId}
-						ref={mergeRefs(ref, toggleRef)}
-						type='checkbox'
-						{...props}
+				<input
+					checked={checked}
+					disabled={disabled}
+					id={fieldId}
+					ref={mergeRefs(ref, toggleRef)}
+					{...props}
+					aria-checked={typeof checked === 'boolean' ? checked : undefined}
+					className={classNames(styles.hiddenCheckbox, className)}
+					role='switch'
+					type='checkbox'
+				/>
+				<span
+					aria-hidden
+					className={classNames(
+						styles.toggle,
+						styles[`toggle-${size}`],
+						checked && styles.checkedToggle,
+						disabled && styles.disabledToggle,
+					)}
+				>
+					<span
+						className={classNames(styles.slider, styles[`slider-${size}`], checked && styles[`checkedSlider-${size}`])}
 					/>
-					<div
-						className={classNames(
-							styles.toggle,
-							styles[`toggle-${size}`],
-							checked && styles.checkedToggle,
-							disabled && styles.disabledToggle,
-						)}
-					>
-						<div
-							className={classNames(
-								styles.slider,
-								styles[`slider-${size}`],
-								checked && styles[`checkedSlider-${size}`],
-							)}
-						/>
-					</div>
-				</label>
+				</span>
 				{labelComponent}
-			</div>
+			</label>
 		)
 	},
 )

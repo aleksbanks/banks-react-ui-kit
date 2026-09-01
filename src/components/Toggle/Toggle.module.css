@@ -1,8 +1,10 @@
 /* Base*/
 .toggleWrapper {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: var(--space-xs);
+	cursor: pointer;
 }
 
 .labelSideLeft {
@@ -18,12 +20,20 @@
 
 .hiddenCheckbox {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 0;
-	opacity: 0;
-	visibility: hidden;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.hiddenCheckbox:focus-visible + .toggle {
+	outline: var(--focus-ring-width) solid var(--color-primary-50);
+	outline-offset: var(--focus-ring-offset);
 }
 
 .toggle {
@@ -40,11 +50,11 @@
 
 .slider {
 	position: absolute;
-	top: 2px;
+	top: var(--space-hairline);
 	border-radius: var(--radius-circle);
 	transition: transform 0.4s ease;
 	background-color: var(--color-secondary-10);
-	transform: translateX(2px);
+	transform: translateX(var(--space-hairline));
 }
 
 /* Size */
@@ -54,7 +64,7 @@
 }
 
 .toggle-m {
-	width: 48px;
+	width: var(--size-control-l);
 	height: var(--space-xl);
 }
 
@@ -69,7 +79,7 @@
 }
 
 .checkedSlider-s {
-	transform: translateX(18px);
+	transform: translateX(var(--size-control-xs));
 }
 
 .checkedSlider-m {
@@ -101,4 +111,5 @@
 
 .disabledWrapper {
 	color: var(--color-secondary-60);
+	cursor: default;
 }

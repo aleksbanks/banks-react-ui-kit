@@ -3,7 +3,7 @@ import React from 'react'
 import { LOREM_IPSUM } from 'common/const/mock'
 
 import { Typography, TypographyProps } from '..'
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react-webpack5'
 
 const componentName = 'Typography'
 

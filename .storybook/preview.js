@@ -2,7 +2,6 @@ import './styles/main.css'
 import '../src/common/styles/common.styles.module.css'
 
 export const parameters = {
-	actions: { argTypesRegex: '^on[A-Z].*' },
 	layout: 'centered',
 
 	options: {

@@ -1,5 +1,6 @@
 import React, { type ForwardedRef, forwardRef } from 'react'
 
+import { useInputId } from 'hooks'
 import { classNames } from 'utils'
 
 import type { RadioGroupProps } from './RadioGroup.types'
@@ -12,15 +13,38 @@ import styles from './RadioGroup.module.css'
 
 export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 	(
-		{ size = 'm', labelSide = 'left', items, groupLabel, onChange, selectedValue, required, ...props }: RadioGroupProps,
+		{
+			size = 'm',
+			labelSide = 'left',
+			items,
+			groupLabel,
+			onChange,
+			selectedValue,
+			required,
+			className,
+			...props
+		}: RadioGroupProps,
 		ref: ForwardedRef<HTMLDivElement>,
 	) => {
+		const groupId = useInputId()
+		const labelId = `${groupId}-label`
+		const groupName = `${groupId}-name`
+
 		return (
-			<div className={classNames(styles.radioGroup, labelSide === 'top' && styles.topLabel)} ref={ref} {...props}>
-				<Typography fullWidth={false} variant={typographyVariantByRadioButtonSize[size]}>
-					{groupLabel}
-					{required && <RequiredIcon />}
-				</Typography>
+			<div
+				className={classNames(styles.radioGroup, labelSide === 'top' && styles.topLabel, className)}
+				ref={ref}
+				{...props}
+				aria-labelledby={groupLabel ? labelId : props['aria-labelledby']}
+				aria-required={required || undefined}
+				role='radiogroup'
+			>
+				{groupLabel && (
+					<Typography as='span' fullWidth={false} id={labelId} variant={typographyVariantByRadioButtonSize[size]}>
+						{groupLabel}
+						{required && <RequiredIcon />}
+					</Typography>
+				)}
 
 				<div className={styles.groupWrapper}>
 					{items.map((radio) => {
@@ -28,7 +52,8 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 							<RadioButton
 								{...radio}
 								checked={radio.value === selectedValue}
-								key={radio.label}
+								key={String(radio.value)}
+								name={radio.name ?? groupName}
 								size={size}
 								onChange={() => onChange(radio.value)}
 							/>
