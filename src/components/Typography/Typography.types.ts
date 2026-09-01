@@ -2,12 +2,19 @@ import type { HTMLAttributes } from 'react'
 
 export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'body-xl' | 'body-l' | 'body-m' | 'body-s' | 'body-xs'
 
-export interface TypographyProps extends HTMLAttributes<HTMLParagraphElement> {
+export type TypographyElement = 'h1' | 'h2' | 'h3' | 'p' | 'span' | 'div'
+
+export interface TypographyProps extends HTMLAttributes<HTMLElement> {
 	/**
 	 * The typography variant to be used.
 	 * This determines the font size, weight, and style of the text.
 	 */
 	variant?: TypographyVariant
+	/**
+	 * HTML tag to render. Defaults to a heading tag for `h1`–`h3` and `p` for body variants.
+	 * Pass `span` when nesting inside a `label` or another paragraph.
+	 */
+	as?: TypographyElement
 	/**
 	 * The text content to be displayed.
 	 */

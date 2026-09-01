@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'react'
+
 import type { RadioButtonProps } from 'components/RadioButton'
 import type { Position } from 'types/common.types'
 
@@ -5,7 +7,9 @@ export type RadioItem<Value = string | number> = Omit<RadioButtonProps, 'value'>
 	value: Value
 }
 
-export interface RadioGroupProps<Value = string | number> extends Pick<RadioButtonProps, 'size'> {
+export interface RadioGroupProps<Value = string | number>
+	extends Pick<RadioButtonProps, 'size'>,
+		Omit<HTMLAttributes<HTMLDivElement>, 'onChange' | 'role'> {
 	/**
 	 * Label for the radio group
 	 */

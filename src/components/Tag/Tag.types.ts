@@ -5,7 +5,7 @@ import type { Size, Status } from 'types/common.types'
 export type TagSize = Extract<Size, 'xs' | 's' | 'm'>
 export type TagStatus = Status
 
-export type TagProps = HTMLAttributes<HTMLDivElement> & {
+export type TagProps = Omit<HTMLAttributes<HTMLElement>, 'color'> & {
 	/**
 	 * The text to be displayed within the tag.
 	 */

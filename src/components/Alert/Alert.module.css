@@ -1,0 +1,159 @@
+@keyframes fadeSlideIn {
+	from {
+		opacity: 0;
+		transform: translateY(var(--space-xs));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.root {
+	position: fixed;
+	z-index: 1400;
+}
+
+.topLeft {
+	top: var(--space-s);
+	left: var(--space-s);
+}
+
+.topCenter {
+	top: var(--space-s);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.topRight {
+	top: var(--space-s);
+	right: var(--space-s);
+}
+
+.bottomLeft {
+	bottom: var(--space-s);
+	left: var(--space-s);
+}
+
+.bottomCenter {
+	bottom: var(--space-s);
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.bottomRight {
+	bottom: var(--space-s);
+	right: var(--space-s);
+}
+
+.paper {
+	box-sizing: border-box;
+	max-width: calc(100vw - var(--space-s) * 2);
+	padding: var(--space-m) var(--space-m) var(--space-m) var(--space-l);
+	background: var(--color-secondary-10);
+	color: var(--color-dark);
+	border-radius: var(--radius-square);
+	box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+	animation: fadeSlideIn 225ms ease-out;
+	font-family: var(--font-family), sans-serif;
+}
+
+.medium {
+	min-width: 288px;
+}
+
+.large {
+	min-width: 324px;
+}
+
+.titleWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-xxs);
+	width: 100%;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xxs);
+	width: 100%;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.medium .icon svg {
+	width: var(--space-m);
+	height: var(--space-m);
+}
+
+.large .icon svg {
+	width: var(--space-l);
+	height: var(--space-l);
+}
+
+.body {
+	margin-left: var(--space-l);
+}
+
+.large .body {
+	margin-left: calc(var(--space-xl) + var(--space-xxs));
+}
+
+.success {
+	color: var(--color-success-70);
+}
+
+.info {
+	color: var(--color-info-70);
+}
+
+.warning {
+	color: var(--color-warning-70);
+}
+
+.error {
+	color: var(--color-error-70);
+}
+
+.neutral {
+	color: var(--color-secondary-70);
+}
+
+.closeButton {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	padding: var(--space-xxs);
+	border: none;
+	background: transparent;
+	color: var(--color-secondary-70);
+	border-radius: var(--radius-square);
+}
+
+.closeButton:hover {
+	color: var(--color-secondary-90);
+	background: var(--color-secondary-20);
+}
+
+.closeButton:focus {
+	outline: none;
+}
+
+.closeButton:focus-visible {
+	outline: var(--focus-ring-width) solid var(--color-primary-50);
+	outline-offset: var(--focus-ring-offset);
+}
+
+.closeButton svg {
+	width: var(--space-m);
+	height: var(--space-m);
+}

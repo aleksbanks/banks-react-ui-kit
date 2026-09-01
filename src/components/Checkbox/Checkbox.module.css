@@ -20,7 +20,7 @@
 /* Base */
 .checkbox {
 	margin: 0;
-	padding: 2px;
+	padding: var(--space-hairline);
 	appearance: none;
 	outline: none;
 	border-radius: var(--radius-square);
@@ -28,6 +28,11 @@
 	background-color: var(--color-secondary-10);
 	border: thin solid var(--color-secondary-60);
 	cursor: pointer;
+}
+
+.checkbox:focus-visible {
+	outline: var(--focus-ring-width) solid var(--color-primary-50);
+	outline-offset: var(--focus-ring-offset);
 }
 
 /* Disabled */

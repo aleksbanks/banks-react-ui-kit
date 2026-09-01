@@ -28,10 +28,15 @@
 	margin: 0;
 }
 
+.radioButton:focus-visible {
+	outline: var(--focus-ring-width) solid var(--color-primary-50);
+	outline-offset: var(--focus-ring-offset);
+}
+
 /* Size */
 .radioButton-s {
-	min-width: 18px;
-	min-height: 18px;
+	min-width: var(--size-control-xs);
+	min-height: var(--size-control-xs);
 }
 
 .radioButton-m {
@@ -40,8 +45,8 @@
 }
 
 .image-m {
-	width: 48px;
-	height: 48px;
+	width: var(--size-control-l);
+	height: var(--size-control-l);
 }
 
 .image-s {

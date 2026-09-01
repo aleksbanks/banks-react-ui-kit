@@ -24,7 +24,7 @@ export interface ToggleProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
 	 */
 	checked?: boolean
 	/**
-	 * Reference to the root HTMLDivElement of the toggle
+	 * Reference to the root label of the toggle
 	 */
-	rootRef?: Ref<HTMLDivElement>
+	rootRef?: Ref<HTMLLabelElement>
 }

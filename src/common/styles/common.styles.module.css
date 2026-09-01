@@ -30,7 +30,7 @@
 	--color-error-90: #b02b0c;
 	--color-error-70: #f04d29;
 	--color-error-40: #f9b8a9;
-	--color-errory-20: #feefec;
+	--color-error-20: #feefec;
 
 	/* Success */
 	--color-success-90: #4a8700;
@@ -62,6 +62,7 @@
 	--radius-circle: 50%;
 
 	/* Spacing */
+	--space-hairline: 2px;
 	--space-xxl: 32px;
 	--space-xl: 24px;
 	--space-l: 20px;
@@ -69,6 +70,15 @@
 	--space-s: 12px;
 	--space-xs: 8px;
 	--space-xxs: 4px;
+
+	/* Control sizes */
+	--size-control-xs: 18px;
+	--size-control-m: 40px;
+	--size-control-l: 48px;
+
+	/* Focus ring */
+	--focus-ring-width: 2px;
+	--focus-ring-offset: 2px;
 
 	/* Font Family */
 	--font-family: Trebuchet MS, sans-serif;

@@ -8,6 +8,25 @@
 	cursor: default;
 }
 
+.tagInteractive {
+	cursor: pointer;
+	font: inherit;
+	font-family: var(--font-family), sans-serif;
+}
+
+.tagInteractive:focus {
+	outline: none;
+}
+
+.tagInteractive:focus-visible {
+	outline: var(--focus-ring-width) solid var(--color-primary-50);
+	outline-offset: var(--focus-ring-offset);
+}
+
+.tagInteractive:disabled {
+	cursor: default;
+}
+
 .tag:hover {
 	color: var(--color-primary-60);
 	border-color: var(--color-primary-60);
@@ -22,7 +41,7 @@
 /* Size */
 .tag-xs {
 	gap: var(--space-xxs);
-	padding: 2px var(--space-xxs);
+	padding: var(--space-hairline) var(--space-xxs);
 	border-radius: var(--radius-square);
 }
 

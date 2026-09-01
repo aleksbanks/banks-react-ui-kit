@@ -5,12 +5,35 @@ module.exports = {
 
 	addons: [
 		'@storybook/addon-links',
-		'@storybook/addon-essentials',
-		'@storybook/addon-interactions',
 		'@storybook/addon-webpack5-compiler-swc',
 		'@chromatic-com/storybook',
-		'@storybook/addon-styling-webpack',
-		'storybook-css-modules',
+		{
+			name: '@storybook/addon-styling-webpack',
+			options: {
+				rules: [
+					{
+						test: /\.css$/,
+						use: [
+							'style-loader',
+							{
+								loader: 'css-loader',
+								options: {
+									esModule: false,
+									importLoaders: 1,
+									modules: {
+										auto: true,
+										namedExport: false,
+										exportLocalsConvention: 'as-is',
+										localIdentName: '[path][name]__[local]--[hash:base64:5]',
+									},
+								},
+							},
+						],
+					},
+				],
+			},
+		},
+		'@storybook/addon-docs',
 	],
 
 	typescript: {
@@ -31,6 +54,7 @@ module.exports = {
 				extensions: config.resolve.extensions,
 			}),
 		]
+
 		return config
 	},
 }

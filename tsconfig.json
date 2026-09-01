@@ -11,7 +11,7 @@
 		"skipLibCheck": true,
 		"esModuleInterop": true,
 		"declaration": true,
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitThis": true,
@@ -25,5 +25,5 @@
 		"jsx": "preserve"
 	},
 	"include": ["src/**/*"],
-	"exclude": ["node_modules", "lib", "src/_stories", "**/*.stories.tsx"]
+	"exclude": ["node_modules", "lib"]
 }

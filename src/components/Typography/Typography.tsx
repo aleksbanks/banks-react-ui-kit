@@ -2,12 +2,26 @@ import React, { forwardRef, useMemo } from 'react'
 
 import { classNames } from 'utils/classNames'
 
-import type { TypographyProps } from './Typography.types'
+import type { TypographyElement, TypographyProps, TypographyVariant } from './Typography.types'
 
 import styles from './Typography.module.css'
 
-export const Typography = forwardRef<HTMLParagraphElement, TypographyProps>(
-	({ text, color, fontWeight, fullWidth = false, lineHeight, noWrap, variant = 'body-l', children, ...props }, ref) => {
+const defaultElementByVariant: Record<TypographyVariant, TypographyElement> = {
+	h1: 'h1',
+	h2: 'h2',
+	h3: 'h3',
+	'body-xl': 'p',
+	'body-l': 'p',
+	'body-m': 'p',
+	'body-s': 'p',
+	'body-xs': 'p',
+}
+
+export const Typography = forwardRef<HTMLElement, TypographyProps>(
+	(
+		{ text, color, fontWeight, fullWidth = false, lineHeight, noWrap, variant = 'body-l', as, children, ...props },
+		ref,
+	) => {
 		const style = useMemo(
 			() => ({
 				fontWeight,
@@ -19,13 +33,9 @@ export const Typography = forwardRef<HTMLParagraphElement, TypographyProps>(
 		)
 
 		const classnames = classNames(styles.baseStyles, styles[variant], noWrap && styles.nowrap)
+		const Element = as ?? defaultElementByVariant[variant]
 
-		return (
-			<p className={classnames} ref={ref} style={style} {...props}>
-				{text}
-				{children}
-			</p>
-		)
+		return React.createElement(Element, { className: classnames, ref, style, ...props }, text, children)
 	},
 )
 

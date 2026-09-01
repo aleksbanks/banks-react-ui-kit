@@ -21,6 +21,9 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> 
 	/** Is checked */
 	checked?: boolean
 
+	/** Native indeterminate state. Requires a `ref` internally and does not replace `checked`. */
+	indeterminate?: boolean
+
 	/** Image placed near label*/
 	image?: ImageProps
 

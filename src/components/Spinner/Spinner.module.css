@@ -25,8 +25,8 @@
 
 /** Sizes */
 .small {
-	width: 16px;
-	height: 16px;
+	width: var(--space-m);
+	height: var(--space-m);
 }
 
 .medium {
@@ -40,6 +40,6 @@
 }
 
 .xlarge {
-	width: 48px;
-	height: 48px;
+	width: var(--size-control-l);
+	height: var(--size-control-l);
 }

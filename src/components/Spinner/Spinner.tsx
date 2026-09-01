@@ -7,16 +7,21 @@ import { spinnerClassBySize } from './Spinner.const'
 
 import styles from './Spinner.module.css'
 
-export const Spinner = ({ size = 'm', ...props }: SpinnerProps) => {
+export const Spinner = ({ size = 'm', 'aria-hidden': ariaHidden, 'aria-label': ariaLabel, ...props }: SpinnerProps) => {
+	const isHidden = Boolean(ariaHidden)
+
 	return (
 		<svg
+			aria-hidden={isHidden || undefined}
+			aria-label={isHidden ? undefined : ariaLabel ?? 'Loading'}
 			className={classNames(styles.spinner, spinnerClassBySize[size])}
-			{...props}
 			fill='none'
 			height='24'
+			role={isHidden ? undefined : 'status'}
 			viewBox='0 0 24 24'
 			width='24'
 			xmlns='http://www.w3.org/2000/svg'
+			{...props}
 		>
 			<path
 				clipRule='evenodd'

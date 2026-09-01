@@ -1,7 +1,9 @@
 import React from 'react'
 
+import { useSwitcher } from 'hooks'
+
 import { Tag, TagProps } from '..'
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react-webpack5'
 
 const componentName = 'Tag'
 
@@ -15,8 +17,9 @@ export default {
 	},
 } as Meta<typeof Tag>
 
-const Template: StoryFn<typeof Tag> = ({ ...args }: TagProps) => {
-	return <Tag {...args} />
+const Template: StoryFn<typeof Tag> = ({ isSelected = false, ...args }: TagProps) => {
+	const [selected, , , toggleSelected] = useSwitcher(isSelected)
+	return <Tag {...args} isSelected={selected} onClick={toggleSelected} />
 }
 
 export const TagStory = Template.bind({})

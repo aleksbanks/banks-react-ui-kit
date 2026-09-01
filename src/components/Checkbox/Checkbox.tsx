@@ -24,6 +24,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 			label,
 			image,
 			required,
+			className,
+			indeterminate = false,
 			...props
 		},
 		ref?,
@@ -33,26 +35,20 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
 		useEffect(() => {
 			if (!checkboxRef.current) return
-
-			if (checked) {
-				checkboxRef.current.checked = true
-				return
-			}
-
-			checkboxRef.current.checked = false
-		}, [checked])
+			checkboxRef.current.indeterminate = indeterminate
+		}, [indeterminate])
 
 		const labelComponent = useMemo(
 			() => (
-				<div className={styles.labelComponent}>
+				<span className={styles.labelComponent}>
 					{image && (
-						<img alt={image.alt} className={classNames(styles.image, styles[`image-${size}`])} src={image.src} />
+						<img alt={image.alt ?? ''} className={classNames(styles.image, styles[`image-${size}`])} src={image.src} />
 					)}
-					<Typography variant={typographyVariantByCheckboxSize[size]}>
+					<Typography as='span' variant={typographyVariantByCheckboxSize[size]}>
 						{label}
 						{required && <RequiredIcon />}
 					</Typography>
-				</div>
+				</span>
 			),
 			[image, label, required, size],
 		)
@@ -64,13 +60,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 				ref={rootRef}
 			>
 				<input
-					aria-disabled={disabled}
-					className={classNames(styles.checkbox, styles[`checkbox-${size}`], styles[`checkbox-${status}`])}
 					disabled={disabled}
 					id={fieldId}
 					ref={mergeRefs(ref, checkboxRef)}
-					type='checkbox'
 					{...props}
+					checked={checked}
+					className={classNames(styles.checkbox, styles[`checkbox-${size}`], styles[`checkbox-${status}`], className)}
+					required={required}
+					type='checkbox'
 				/>
 				{label && labelComponent}
 			</label>

@@ -11,7 +11,19 @@ import styles from './RadioButton.module.css'
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
 	(
-		{ labelSide = 'right', size = 'm', status = 'neutral', disabled, rootRef, checked, id, label, image, ...props },
+		{
+			labelSide = 'right',
+			size = 'm',
+			status = 'neutral',
+			disabled,
+			rootRef,
+			checked,
+			id,
+			label,
+			image,
+			className,
+			...props
+		},
 		ref?,
 	) => {
 		const radioButtonRef = useRef<HTMLInputElement>(null)
@@ -21,9 +33,11 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
 			return (
 				<label className={styles.imageAndLabelWrapper} htmlFor={fieldId}>
 					{image && (
-						<img alt={image.alt} className={classNames(styles.image, styles[`image-${size}`])} src={image.src} />
+						<img alt={image.alt ?? ''} className={classNames(styles.image, styles[`image-${size}`])} src={image.src} />
 					)}
-					<Typography variant={typographyVariantByRadioButtonSize[size]}>{label}</Typography>
+					<Typography as='span' variant={typographyVariantByRadioButtonSize[size]}>
+						{label}
+					</Typography>
 				</label>
 			)
 		}, [fieldId, image, label, size])
@@ -35,12 +49,17 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
 			>
 				<input
 					checked={checked}
-					className={classNames(styles.radioButton, styles[`radioButton-${size}`], styles[`radioButton-${status}`])}
 					disabled={disabled}
 					id={fieldId}
 					ref={mergeRefs(ref, radioButtonRef)}
-					type='radio'
 					{...props}
+					type='radio'
+					className={classNames(
+						styles.radioButton,
+						styles[`radioButton-${size}`],
+						styles[`radioButton-${status}`],
+						className,
+					)}
 				/>
 				{label && labelComponent}
 			</div>

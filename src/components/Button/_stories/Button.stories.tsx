@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Button, type ButtonProps } from '../index'
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react-webpack5'
 
 export default {
 	title: 'Basic/Button',

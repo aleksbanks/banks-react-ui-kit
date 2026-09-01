@@ -1,7 +1,5 @@
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # idea
 /.idea
@@ -11,10 +9,9 @@
 lib
 /build
 
-yarn-debug.log*
-yarn-error.log*
-.npmignore
 storybook-static
 tsconfig.tsbuildinfo
 output.log
+debug-storybook.log
+.storybook-css-rules.json
 /.cache/
