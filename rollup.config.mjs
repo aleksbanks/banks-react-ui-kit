@@ -1,16 +1,18 @@
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import typescript from '@rollup/plugin-typescript'
-import postcss from 'rollup-plugin-postcss'
-import dts from 'rollup-plugin-dts'
-
-// This is required to read package.json file when
-// using Native ES modules in Node.js
-// https://rollupjs.org/command-line-interface/#importing-package-json
+import path from 'node:path'
 import { createRequire } from 'node:module'
+import { fileURLToPath } from 'node:url'
+
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+import dts from 'rollup-plugin-dts'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss'
+
 const requireFile = createRequire(import.meta.url)
 const packageJson = requireFile('./package.json')
+const dirname = path.dirname(fileURLToPath(import.meta.url))
+const stylesPath = path.join(dirname, 'lib/styles.css')
 
 export default [
 	{
@@ -21,12 +23,14 @@ export default [
 				format: 'cjs',
 				sourcemap: true,
 				exports: 'named',
+				banner: `'use client';\nrequire('./styles.css');`,
 			},
 			{
 				file: packageJson.module,
 				format: 'esm',
 				sourcemap: true,
 				exports: 'named',
+				banner: `'use client';\nimport './styles.css';`,
 			},
 		],
 		plugins: [
@@ -35,19 +39,26 @@ export default [
 			commonjs(),
 			typescript({
 				tsconfig: './tsconfig.json',
-				exclude: ['src/**/*.stories.(tsx|ts)'],
+				exclude: ['**/*.stories.ts', '**/*.stories.tsx'],
+				compilerOptions: {
+					noEmit: false,
+					declaration: false,
+					jsx: 'react-jsx',
+					noUnusedLocals: false,
+				},
 			}),
 			postcss({
 				modules: true,
-				extract: true,
+				extract: stylesPath,
 				minimize: true,
 				sourceMap: true,
 			}),
 		],
 	},
 	{
-		input: 'lib/index.d.ts',
-		output: [{ file: 'lib/index.d.ts', format: 'es' }],
-		plugins: [dts()],
+		input: 'src/index.ts',
+		output: [{ file: packageJson.types, format: 'es' }],
+		plugins: [dts({ tsconfig: './tsconfig.json' })],
+		external: [/\.css$/],
 	},
 ]

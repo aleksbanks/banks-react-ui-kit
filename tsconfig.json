@@ -3,6 +3,15 @@
 	"compilerOptions": {
 		"rootDir": "./src",
 		"baseUrl": "./src",
+		"paths": {
+			"components": ["components/index.ts"],
+			"components/*": ["components/*"],
+			"hooks": ["hooks/index.ts"],
+			"hooks/*": ["hooks/*"],
+			"utils": ["utils/index.ts"],
+			"utils/*": ["utils/*"],
+			"types/*": ["types/*"]
+		},
 		"outDir": "lib",
 		"module": "esnext",
 		"target": "es5",

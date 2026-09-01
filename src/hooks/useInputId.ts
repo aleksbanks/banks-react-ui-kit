@@ -1,14 +1,10 @@
-import { useMemo } from 'react'
-
-import { v4 } from 'uuid'
+import { useId } from 'react'
 
 /**
- * A custom hook to generate a unique ID for an input element.
- * If an ID is provided, it will be used; otherwise, a new ID will be generated.
- *
- * @param id - The optional ID to use for the input element
- * @returns A unique ID for the input element
+ * Returns a stable id for an input. Uses the given `id` when provided,
+ * otherwise React's `useId()`.
  */
 export const useInputId = (id?: string): string => {
-	return useMemo(() => id ?? `input_${v4()}`, [id])
+	const generatedId = useId()
+	return id ?? generatedId
 }

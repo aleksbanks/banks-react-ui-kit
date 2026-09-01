@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 
-import { v4 } from 'uuid'
+import { createId } from 'utils/createId'
 
 import { AlertList } from './AlertList'
 import type { AlertItem, AlertsContextValues } from './types'
@@ -18,7 +18,7 @@ export const AlertsContextProvider = ({ children }: AlertsContextProviderProps) 
 
 	const addAlert = useCallback((alertProps: AlertProps, { closePrev = true } = {}) => {
 		setAlerts((prevAlerts) => {
-			const id = v4()
+			const id = createId()
 			return [
 				...(closePrev ? [] : prevAlerts),
 				{
