@@ -1,57 +1,59 @@
 {
   "name": "banks-ui-kit",
-  "version": "1.0.0",
-  "description": "My own react ui component library",
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
-  "types": "lib/index.d.ts",
+  "version": "0.1.0",
+  "description": "React UI component library",
   "license": "MIT",
-  "private": false,
+  "author": "Aleksandra Bychkova <sashabychkova30@gmail.com>",
+  "main": "./lib/index.js",
+  "module": "./lib/index.esm.js",
+  "types": "./lib/index.d.ts",
+  "style": "./lib/styles.css",
+  "sideEffects": ["**/*.css", "./lib/index.js", "./lib/index.esm.js"],
+  "files": ["lib", "CHANGELOG.md"],
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.esm.js",
+      "require": "./lib/index.js"
+    },
+    "./styles.css": "./lib/styles.css",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "rollup -c",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx,stories.tsx,stories.ts}' --color",
+    "lint:fix": "eslint 'src/**/*.{js,ts,jsx,tsx,stories.tsx,stories.ts}' --fix --color",
     "storybook": "storybook dev -p 6006",
-    "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx,stories.tsx,stories.ts}' --fix --color"
-  },
-  "author": "Aleksandra Bychkova <sashabychkova30@gmail.com>",
-  "lint-staged": {
-    "*.stories.(ts|tsx)": [
-      "prettier --write",
-      "npm run lint"
-    ],
-    "*.(ts|tsx)": [
-      "prettier --write",
-      "npm run lint"
-    ],
-    "*(json/js)": [
-      "prettier --write"
-    ]
+    "prepublishOnly": "npm run typecheck && npm run lint && npm run build"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
-    "@chromatic-com/storybook": "^5.3.0",
+    "@chromatic-com/storybook": "^3",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.1",
-    "@storybook/addon-docs": "^10.5.10",
-    "@storybook/addon-links": "^10.5.10",
-    "@storybook/addon-styling-webpack": "^3.0.2",
-    "@storybook/addon-webpack5-compiler-swc": "^4.0.3",
-    "@storybook/react": "^10.5.10",
-    "@storybook/react-webpack5": "^10.5.10",
+    "@storybook/addon-actions": "^8.4.4",
+    "@storybook/addon-essentials": "^8.4.4",
+    "@storybook/addon-interactions": "^8.4.4",
+    "@storybook/addon-links": "^8.4.4",
+    "@storybook/addon-styling-webpack": "^1.0.1",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/addons": "^7.6.17",
+    "@storybook/react": "^8.4.4",
+    "@storybook/react-webpack5": "^8.4.4",
+    "@storybook/test": "^8.4.4",
+    "@storybook/theming": "^8.4.4",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
     "babel-loader": "^8.4.1",
-    "css-loader": "^7.1.5",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "17.0.0",
@@ -61,7 +63,7 @@
     "eslint-plugin-prettier": "3",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-storybook": "10.5.10",
+    "eslint-plugin-storybook": "0.6.13",
     "eslint-plugin-unused-imports": "^2.0.0",
     "postcss": "^8.4.49",
     "prettier": "2",
@@ -71,12 +73,22 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "storybook": "^10.5.10",
-    "style-loader": "^4.0.0",
+    "storybook": "^8.4.4",
+    "storybook-css-modules": "^1.0.8",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "^5.6.3"
   },
-  "dependencies": {
-    "uuid": "^11.0.3"
+  "lint-staged": {
+    "*.stories.(ts|tsx)": [
+      "prettier --write",
+      "npm run lint:fix"
+    ],
+    "*.(ts|tsx)": [
+      "prettier --write",
+      "npm run lint:fix"
+    ],
+    "*(json/js)": [
+      "prettier --write"
+    ]
   }
 }
